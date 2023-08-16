@@ -40,7 +40,7 @@ jobs:
           sudo find ./ -type d -exec chmod 755 {} \;
 
       - name: Checkout UI Repo
-        - uses: actions/checkout@v3
+        uses: actions/checkout@v3
           with:
             repository: finotor-innovation/invoiceninja-ui
             path: 'ui'

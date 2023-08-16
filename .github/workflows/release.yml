@@ -41,7 +41,6 @@ jobs:
 
       - name: Prepare React FrontEnd
         run: |
-# git clone https://${{secrets.commit_secret}}@github.com/invoiceninja/ui.git
           git clone https://github.com/finotor-innovation/invoiceninja-ui.git
           cd ui
           git checkout main

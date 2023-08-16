@@ -41,10 +41,10 @@ jobs:
 
       - name: Checkout UI Repo
         uses: actions/checkout@v3
-          with:
-            repository: finotor-innovation/invoiceninja-ui
-            path: 'ui'
-      
+        with:
+          repository: finotor-innovation/invoiceninja-ui
+          path: 'ui'
+
       - name: Prepare React FrontEnd
         run: |
           cd ui

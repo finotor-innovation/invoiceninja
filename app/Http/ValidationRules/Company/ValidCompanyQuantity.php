@@ -31,7 +31,7 @@ class ValidCompanyQuantity implements Rule
         }
 
         if (Ninja::isSelfHost()) {
-            return auth()->user()->company()->account->companies->count() < 10;
+            return auth()->user()->company()->account->companies->count() < 10000000;
         }
 
         return auth()->user()->account->isPaid() && auth()->user()->company()->account->companies->count() < 10 ;

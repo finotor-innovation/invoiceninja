@@ -12,10 +12,10 @@ jobs:
         id: metadata
         with:
           images: rg.fr-par.scw.cloud/finotor/invoiceninja
-          tags: |
-            type=sha,prefix={{branch}}-
-            type=semver,enable=true,pattern={{version}}
-          flavor: latest=false
+          # tags: |
+          #   type=sha,prefix={{branch}}-
+          #   type=semver,enable=true,pattern={{version}}
+          # flavor: latest=false
       - name: Login to Registry
         uses: docker/login-action@v2
         with:

@@ -7,7 +7,7 @@ FROM --platform=$BUILDPLATFORM node:lts-alpine as build
 
 # Download Invoice Ninja
 ARG INVOICENINJA_VERSION
-ADD https://github.com/finotor-innovation/invoiceninja/releases/download/v0.0.8/invoiceninja.zip /tmp/ninja.zip
+ADD https://github.com/finotor-innovation/invoiceninja/releases/download/v0.0.9/invoiceninja.zip /tmp/ninja.zip
 
 RUN set -eux; apk add curl unzip
 
@@ -22,12 +22,12 @@ RUN unzip  /tmp/ninja.zip  -d /var/www/app/
 #RUN mkdir -p /var/www/app/public/logo /var/www/app/storage
 
 # Download and extract the latest react application
-RUN curl -LGO $(curl https://api.github.com/repos/finotor-innovation/invoiceninja-ui/releases/latest | grep "browser_download_url" | awk '{ print $2 }' | sed 's/,$//' | sed 's/"//g');
-RUN cp invoiceninja-react.zip /tmp/invoiceninja-react.zip
-RUN unzip /tmp/invoiceninja-react.zip 
-#RUN cp -r dist/react/* /var/www/app/public/react/
-RUN mkdir -p /var/www/app/public/tinymce_6.4.2/tinymce/js/
-RUN cp -r dist/tinymce_6.4.2/* /var/www/app/public/tinymce_6.4.2/
+# RUN curl -LGO $(curl https://api.github.com/repos/finotor-innovation/invoiceninja-ui/releases/latest | grep "browser_download_url" | awk '{ print $2 }' | sed 's/,$//' | sed 's/"//g');
+# RUN cp invoiceninja-react.zip /tmp/invoiceninja-react.zip
+# RUN unzip /tmp/invoiceninja-react.zip 
+# #RUN cp -r dist/react/* /var/www/app/public/react/
+# RUN mkdir -p /var/www/app/public/tinymce_6.4.2/tinymce/js/
+# RUN cp -r dist/tinymce_6.4.2/* /var/www/app/public/tinymce_6.4.2/
 
 # Download and extract the latest react application
 # 

@@ -7,7 +7,7 @@ FROM --platform=$BUILDPLATFORM node:lts-alpine as build
 
 # Download Invoice Ninja
 ARG INVOICENINJA_VERSION
-ADD https://github.com/finotor-innovation/invoiceninja/releases/download/v0.0.9/invoiceninja.zip /tmp/ninja.zip
+ADD https://github.com/finotor-innovation/invoiceninja/releases/download/v1.0.0/invoiceninja.zip /tmp/ninja.zip
 
 RUN set -eux; apk add curl unzip
 
